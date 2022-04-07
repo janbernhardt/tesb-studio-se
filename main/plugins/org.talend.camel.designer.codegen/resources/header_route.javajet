@@ -3521,16 +3521,16 @@ if (isProvider) {
                             repo_<%=node.getUniqueName() %>.setRecoveryInterval(<%=recoveryInterval%>);
 <%
                         }
-                    } else if ("HAWTDB".equals(repository)) {
+                    } else if ("LEVELDB".equals(repository)) {
                         boolean usePersistentFile = "true".equals(ElementParameterParser.getValue(node, "__USE_PERSISTENT_FILE__"));
                         String persistentFile = ElementParameterParser.getValue(node, "__PERSISTENT_FILENAME__");
                         if (usePersistentFile) {
 %>
-                            org.apache.camel.component.hawtdb.HawtDBAggregationRepository repo_<%=node.getUniqueName() %> = new org.apache.camel.component.hawtdb.HawtDBAggregationRepository("<%=node.getUniqueName() %>", <%=persistentFile%>);
+                            org.apache.camel.component.leveldb.LevelDBAggregationRepository repo_<%=node.getUniqueName() %> = new org.apache.camel.component.leveldb.LevelDBAggregationRepository("<%=node.getUniqueName() %>", <%=persistentFile%>);
 <%
                         } else {
 %>
-                            org.apache.camel.component.hawtdb.HawtDBAggregationRepository repo_<%=node.getUniqueName() %> = new org.apache.camel.component.hawtdb.HawtDBAggregationRepository("<%=node.getUniqueName() %>");
+                            org.apache.camel.component.leveldb.LevelDBAggregationRepository repo_<%=node.getUniqueName() %> = new org.apache.camel.component.leveldb.LevelDBAggregationRepository("<%=node.getUniqueName() %>");
 <%
                         }
                         if (useRecovery) {
