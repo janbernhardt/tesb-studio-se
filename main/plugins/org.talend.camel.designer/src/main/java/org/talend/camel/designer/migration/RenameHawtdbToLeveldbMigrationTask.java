@@ -42,6 +42,10 @@ public class RenameHawtdbToLeveldbMigrationTask extends AbstractRouteItemCompone
 			if("HAWTDB".equals(value)){
 				p.setValue("LEVELDB");
 				needSave = true;
+				
+				generateReportRecord(new MigrationReportRecorder(this,
+				    MigrationReportRecorder.MigrationOperationType.MODIFY, getRouteItem(), currentNode, "REPOSITORY",
+				        "HAWTDB", "LEVELDB"));
 			}
 		}
 		return needSave;
