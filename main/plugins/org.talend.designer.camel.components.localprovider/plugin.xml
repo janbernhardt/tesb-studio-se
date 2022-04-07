@@ -617,13 +617,57 @@
         </libraryNeeded>
 
         <libraryNeededGroup
-              description="camel-hawtdb-alldep"
-              id="camel-hawtdb-alldep"
-              name="camel-hawtdb-alldep">
+              description="camel-leveldb-alldep"
+              id="camel-leveldb-alldep"
+              name="camel-leveldb-alldep">
            <library
-                 id="hawtbuf">
+                 id="camel-leveldb">
            </library>
+           <library
+                 id="leveldb">
+           </library>
+           <library
+                 id="leveldb-api">
+           </library>
+           <library
+                 id="leveldb-jni">
+           </library>
+           <library
+                 id="guava">
+           </library>
+           
         </libraryNeededGroup>
+        <libraryNeeded
+              context="plugin:org.talend.designer.camel.components.localprovider"
+              id="camel-leveldb"
+              name="${tesb-camel-leveldb}"
+              uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-leveldb}">
+        </libraryNeeded>
+        <libraryNeeded
+              context="plugin:org.talend.designer.camel.components.localprovider"
+              id="leveldb"
+              name="${tesb-leveldb}"
+              uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-leveldb}">
+        </libraryNeeded>
+        <libraryNeeded
+              context="plugin:org.talend.designer.camel.components.localprovider"
+              id="leveldb-api"
+              name="${tesb-leveldb-api}"
+              uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-leveldb-api}">
+        </libraryNeeded>
+        <libraryNeeded
+              context="plugin:org.talend.designer.camel.components.localprovider"
+              id="leveldb-jni"
+              name="${tesb-leveldb-jni}"
+              uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-leveldb-jni}">
+        </libraryNeeded>
+        <libraryNeeded
+              context="plugin:org.talend.libraries.guava"
+              id="guava"
+              name="guava-${guava.version}.jar"
+              mvn_uri="mvn:com.google.guava/guava/${guava.version}"
+              uripath="platform:/plugin/org.talend.libraries.guava/lib/guava-${guava.version}.jar">
+        </libraryNeeded>
         
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
 			name="jackson-annotations-${jackson.version}.jar"
