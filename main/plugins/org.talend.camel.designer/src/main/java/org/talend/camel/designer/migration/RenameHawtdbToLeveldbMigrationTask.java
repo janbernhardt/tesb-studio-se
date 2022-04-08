@@ -8,6 +8,7 @@ import java.util.GregorianCalendar;
 import org.talend.commons.exception.PersistenceException;
 import org.talend.designer.core.model.utils.emf.talendfile.ElementParameterType;
 import org.talend.designer.core.model.utils.emf.talendfile.NodeType;
+import org.talend.migration.MigrationReportRecorder;
 
 /**
  * DOC GangLiu class global comment. Detailed comment
