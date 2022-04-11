@@ -495,7 +495,7 @@
                 beforeLogon="false"
                 breaks="7.3.1"
                 class="org.talend.camel.designer.migration.RenameHawtdbToLeveldbMigrationTask"
-                description="Replace 'HAWTDB' by "LEVELDB" component"
+                description="Replace 'HAWTDB' by 'LEVELDB' component"
                 id="org.talend.camel.designer.migration.RenameHawtdbToLeveldbMigrationTask"
                 name="RenameHawtdbToLeveldbMigrationTask"
                 version="8.0.1">
