@@ -667,7 +667,7 @@
             id="guava-failureaccess"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/guava-failureaccess-${guava.version}.jar"
             mvn_uri="mvn:com.google.guava/failureaccess/${guava.version}"
-            bundleID=""
+            bundleID="">
         </libraryNeeded>
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
 			name="jackson-annotations-${jackson.version}.jar"
