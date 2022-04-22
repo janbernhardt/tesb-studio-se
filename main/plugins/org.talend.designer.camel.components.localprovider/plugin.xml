@@ -663,10 +663,10 @@
               uripath="platform:/plugin/org.talend.libraries.guava/lib/guava-${guava.version}.jar">
         </libraryNeeded>
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
-            name="guava-failureaccess-${guava.version}.jar"
+            name="guava-failureaccess-${guava.failureaccess.version}.jar"
             id="guava-failureaccess"
-            uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/guava-failureaccess-${guava.version}.jar"
-            mvn_uri="mvn:com.google.guava/failureaccess/${guava.version}"
+            uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/guava-failureaccess-${guava.failureaccess.version}.jar"
+            mvn_uri="mvn:com.google.guava/failureaccess/${guava.failureaccess.version}"
             bundleID="">
         </libraryNeeded>
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
