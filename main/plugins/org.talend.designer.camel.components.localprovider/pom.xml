@@ -847,6 +847,12 @@
 			<artifactId>leveldbjni</artifactId>
 			<version>${leveldb-jni-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>failureaccess</artifactId>
+			<version>${guava.failureaccess.version}</version>
+		</dependency>		
+
 	</dependencies>
 
 	<build>
