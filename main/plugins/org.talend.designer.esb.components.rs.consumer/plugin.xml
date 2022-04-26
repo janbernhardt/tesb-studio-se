@@ -239,6 +239,7 @@
 		<libraryNeeded context="plugin:org.apache.httpcomponents.httpclient"
 		    name="org.apache.httpcomponents.httpclient_4.5.13.jar"
 		    id="httpclient"
+		    mvn_uri="mvn:org.apache.httpcomponents/httpclient/4.5.13"
 		    uripath="platform:/plugin/org.talend.libraries.apache.http/lib/httpclient-4.5.13.jar"
 		    bundleID="" />
 		<libraryNeeded context="plugin:org.apache.httpcomponents.httpcore"
@@ -373,6 +374,7 @@
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
 		    name="${tesb-xmlsec}"
 		    id="xmlsec"
+		    mvn_uri="mvn:org.apache.santuario/xmlsec/${xmlsec.version}"
 		    uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-xmlsec}"
 		    bundleID="" />
 		<libraryNeeded context="plugin:org.talend.libraries.apache.common"

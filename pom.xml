@@ -39,6 +39,7 @@
     <jackson.databind.version>2.13.2.2</jackson.databind.version>
     <validation-api.version>2.0.1.Final</validation-api.version>
     <activemq.version>5.16.3</activemq.version>
+    <xmlsec.version>2.2.3</xmlsec.version>
   </properties>
   <repositories>
 	<repository>

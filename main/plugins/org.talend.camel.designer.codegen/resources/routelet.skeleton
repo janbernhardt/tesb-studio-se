@@ -112,7 +112,7 @@ public class CLASS {
 	            org.talend.core.model.process.IProcess2 routelet = (org.talend.core.model.process.IProcess2) node.getComponent().getProcess();
 	            final String routeletClass = org.talend.core.model.utils.RouteUtil.resolveClassName(routelet);
 	            final String instanceName = routeletClass.substring(routeletClass.lastIndexOf('.')+1);
-	            
+	            code.append(routeletClass +" "+ instanceName +"=new "+ routeletClass+ "();\n");
 	            code.append("camelContext.getRegistry().bind(\"" + instanceName +"\", new "+ routeletClass+ "());\n");
 	            
 	            if(useRoute){
