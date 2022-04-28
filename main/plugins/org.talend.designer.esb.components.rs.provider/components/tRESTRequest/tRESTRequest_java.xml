@@ -200,7 +200,7 @@
                 REQUIRED="true"/>
                 <!--REQUIRED_IF="(EXPOSE_SWAGGER_SPEC == 'true')"/-->
 
-            <IMPORT MODULE="cxf-rt-rs-service-description-common-openapi-${cxf.version}.jar" MVN="mvn:org.talend.libraries/cxf-rt-rs-service-description-common-openapi/6.0.0" 
+            <IMPORT MODULE="cxf-rt-rs-service-description-common-openapi-${cxf.version}.jar" MVN="mvn:org.apache.cxf/cxf-rt-rs-service-description-common-openapi/${cxf.version}"
                 NAME="cxf-rt-rs-service-description-common-openapi-${cxf.version}"
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/cxf-rt-rs-service-description-common-openapi-${cxf.version}.jar"
                 REQUIRED="true"/>
@@ -232,19 +232,19 @@
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/reflections-${reflections.version}.jar"
                 REQUIRED="true"/>
 
-            <IMPORT MODULE="jackson-core-${jackson.version}.jar" MVN="mvn:org.talend.libraries/jackson-core/6.0.0" NAME="jackson-core-${jackson.version}"
+            <IMPORT MODULE="jackson-core-${jackson.version}.jar" MVN="mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}" NAME="jackson-core-${jackson.version}"
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/jackson-core-${jackson.version}.jar"
                 REQUIRED="true"/>
 
-            <IMPORT MODULE="jackson-databind-${jackson.version}.jar" MVN="mvn:org.talend.libraries/jackson-databind/6.0.0" NAME="jackson-databind-${jackson.version}"
-                UrlPath="platform:/plugin/org.talend.libraries.esb/lib/jackson-databind-${jackson.version}.jar"
+            <IMPORT MODULE="jackson-databind-${jackson.databind.version}.jar" MVN="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.databind.version}" NAME="jackson-databind-${jackson.databind.version}"
+                UrlPath="platform:/plugin/org.talend.libraries.esb/lib/jackson-databind-${jackson.databind.version}.jar"
                 REQUIRED="true"/>
 
-            <IMPORT MODULE="jackson-dataformat-yaml-${jackson.version}.jar" MVN="mvn:org.talend.libraries/jackson-dataformat-yaml/6.0.0" NAME="jackson-dataformat-yaml-${jackson.version}"
+            <IMPORT MODULE="jackson-dataformat-yaml-${jackson.version}.jar" MVN="mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/${jackson.version}" NAME="jackson-dataformat-yaml-${jackson.version}"
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/jackson-dataformat-yaml-${jackson.version}.jar"
                 REQUIRED="true"/>
 
-            <IMPORT MODULE="jackson-annotations-${jackson.version}.jar" MVN="mvn:org.talend.libraries/jackson-annotations/6.0.0" NAME="jackson-annotations-${jackson.version}"
+            <IMPORT MODULE="jackson-annotations-${jackson.version}.jar" MVN="mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}" NAME="jackson-annotations-${jackson.version}"
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/jackson-annotations-${jackson.version}.jar"
                 REQUIRED="true"/>
 
@@ -256,7 +256,7 @@
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/validation-api-${validation-api.version}.jar"
                 REQUIRED="true"/>
 
-            <IMPORT MODULE="snakeyaml-${snakeyaml.version}.jar" MVN="mvn:org.talend.libraries/snakeyaml/${snakeyaml.version}" NAME="snakeyaml-${snakeyaml.version}"
+            <IMPORT MODULE="snakeyaml-${snakeyaml.version}.jar" MVN="mvn:org.yaml/snakeyaml/${snakeyaml.version}" NAME="snakeyaml-${snakeyaml.version}"
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/snakeyaml-${snakeyaml.version}.jar"
                 REQUIRED="true"/>
 

@@ -381,7 +381,10 @@
             <IMPORT MODULE="jakarta.activation-1.2.1.jar" MVN="mvn:org.talend.libraries/jakarta.activation-1.2.1/6.0.0" NAME="jakarta.activation-1.2.1"
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/jakarta.activation-1.2.1.jar"
                 REQUIRED="true"/>
-                
+
+            <IMPORT MODULE="org.apache.servicemix.bundles.saaj-impl-1.5.1_1.jar" MVN="mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saaj-impl/1.5.1_1" NAME="org.apache.servicemix.bundles.saaj-impl-1.5.1_1"
+                UrlPath="platform:/plugin/org.talend.libraries.esb/lib/org.apache.servicemix.bundles.saaj-impl-1.5.1_1.jar"
+                REQUIRED_IF="(NEED_AUTH == 'true') AND (AUTH_TYPE == 'TOKEN')"/>
 		</IMPORTS>
 	</CODEGENERATION>
 

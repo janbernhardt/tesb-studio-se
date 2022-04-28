@@ -43,6 +43,7 @@
         <mail.version>1.4.7</mail.version>
         <!-- camel-aws -->
         <aws-java-sdk-version>1.11.269</aws-java-sdk-version>
+        <Saxon-HE-version>9.7.0-21</Saxon-HE-version>
         <!-- camel-azure -->
         <azure-storage-version>7.0.0</azure-storage-version>        
         <azure-keyvault-core-version>1.0.0</azure-keyvault-core-version>
@@ -63,7 +64,7 @@
         <reflections.version>0.9.11</reflections.version>
         <guava.version>30.0-jre</guava.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
-        <snakeyaml.version>1.26</snakeyaml.version>
+        <snakeyaml.version>1.30</snakeyaml.version>
         <!-- external deps -->
         <mvn-commons-collections>mvn:commons-collections/commons-collections/3.2.2</mvn-commons-collections>
         <mvn-commons-io>mvn:commons-io/commons-io/2.8.0</mvn-commons-io>
@@ -648,7 +649,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
+            <version>${jackson.databind.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

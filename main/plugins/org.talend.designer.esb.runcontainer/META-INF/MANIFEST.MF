@@ -35,5 +35,5 @@ Bundle-ClassPath: .,
  lib/jansi-1.18.jar,
  lib/slf4j-api-1.7.12.jar,
  lib/httpclient-4.3.6-6.0.0.jar,
- lib/org.apache.karaf.management.server-4.2.7.jar
+ lib/org.apache.karaf.management.server-4.3.7.jar
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

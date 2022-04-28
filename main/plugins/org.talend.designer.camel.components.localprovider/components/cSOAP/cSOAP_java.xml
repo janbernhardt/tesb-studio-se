@@ -253,6 +253,11 @@
         <PARAMETER NAME="LOG_MESSAGES" FIELD="CHECK" REQUIRED="true" NUM_ROW="5">
             <DEFAULT>false</DEFAULT>
         </PARAMETER>
+		
+        <PARAMETER NAME="ECHO_HEADERS" FIELD="CHECK" REQUIRED="true" NUM_ROW="6"
+			SHOW_IF="(#LINK@CONNECTOR.IN.ANY == '0')" >
+            <DEFAULT>true</DEFAULT>
+        </PARAMETER>
 
 		<PARAMETER NAME="ADVARGUMENTS" FIELD="TABLE" NUM_ROW="10"
 			NB_LINES="5">
@@ -298,7 +303,10 @@
             <IMPORT MODULE="jakarta.xml.bind-api-2.3.2.jar" MVN="mvn:org.talend.libraries/jakarta.xml.bind-api/2.3.2" NAME="jakarta.xml.bind-api-2.3.2"
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/jakarta.xml.bind-api-2.3.2.jar"
                 REQUIRED="true"/>
-
+                
+            <IMPORT MODULE="org.apache.servicemix.bundles.saaj-impl-1.5.1_1.jar" MVN="mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saaj-impl/1.5.1_1" NAME="org.apache.servicemix.bundles.saaj-impl-1.5.1_1"
+                UrlPath="platform:/plugin/org.talend.libraries.esb/lib/org.apache.servicemix.bundles.saaj-impl-1.5.1_1.jar"
+                REQUIRED_IF="(ENABLE_SECURITY == 'true') AND (SECURITY_TYPE == 'USER')"/>
 		</IMPORTS>
 	</CODEGENERATION>
 	<RETURNS />

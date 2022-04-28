@@ -13,6 +13,8 @@ imports="
 	String formatType = ElementParameterParser.getValue(node, "__DATAFORMAT__");
 
 	boolean isStudioEEVersion = org.talend.core.PluginChecker.isTIS();
+	
+	boolean echoHeaders = Boolean.parseBoolean(ElementParameterParser.getValue(node, "__ECHO_HEADERS__"));
 
 	boolean useRegistry = false;
 	if(!"RAW".equals(formatType) && !"CXF_MESSAGE".equals(formatType) && isStudioEEVersion){
@@ -29,6 +31,17 @@ imports="
 	if (node.getIncomingConnections().isEmpty()) {
 %>
         from(<%=endpointVar%>)
+
+<%     
+            if (!echoHeaders) {
+%>
+		.process(new org.apache.camel.Processor() {
+				public void process(org.apache.camel.Exchange exchange) throws Exception {
+					exchange.getIn().removeHeaders("*");
+				}
+			})
+<%          }       
+%>
 <%
 	} else {
             if (useRegistry || useCorrelation) {

@@ -2790,9 +2790,6 @@ if (isProvider) {
                     icsOut_<%=cid%> = new java.util.ArrayList<>();
                 }
 
-<%
-                if (isProvider) {
-%>
                 org.apache.cxf.feature.Feature ft_<%=cid%> = new  org.apache.cxf.feature.AbstractFeature() {
                     @Override
                     protected void initializeProvider(org.apache.cxf.interceptor.InterceptorProvider provider, org.apache.cxf.Bus bus) {
@@ -2818,9 +2815,7 @@ if (isProvider) {
                 };
 
                 fts_<%=cid%>.add(ft_<%=cid%>);
-<%
-                }
-%>
+
                 registry.put("features_<%=cid%>", fts_<%=cid%>);
                 registry.put("inInterceptors_<%=cid%>", icsIn_<%=cid%>);
                 registry.put("outInterceptors_<%=cid%>", icsOut_<%=cid%>);
@@ -3185,14 +3180,14 @@ if (isProvider) {
 %>
 
                     <% if (useAuth) {%>
-                        org.apache.qpid.jms.JmsConnectionFactory jmsConnFactory = new org.apache.qpid.jms.JmsConnectionFactory(<%=username%>, decryptedPassword_<%=cid%>, <%=ep.toString()%>);
+                        org.apache.qpid.jms.JmsConnectionFactory jmsConnFactory<%=cid%> = new org.apache.qpid.jms.JmsConnectionFactory(<%=username%>, decryptedPassword_<%=cid%>, <%=ep.toString()%>);
                     <%} else {%>
-                        org.apache.qpid.jms.JmsConnectionFactory jmsConnFactory = new org.apache.qpid.jms.JmsConnectionFactory(<%=ep.toString()%>);
+                        org.apache.qpid.jms.JmsConnectionFactory jmsConnFactory<%=cid%> = new org.apache.qpid.jms.JmsConnectionFactory(<%=ep.toString()%>);
                     <%}%>
 
                     if(camelContext.getComponent(<%=name%>)==null){
                         camelContext.addComponent(<%=name%>,
-                                new org.apache.camel.component.amqp.AMQPComponent(jmsConnFactory));
+                                new org.apache.camel.component.amqp.AMQPComponent(jmsConnFactory<%=cid%>));
 
                     }
                     //((org.apache.camel.component.amqp.AMQPComponent) camelContext.getComponent(<%=name%>)).getConfiguration().setClientId("<%=process.getName().toLowerCase()%>" + java.util.UUID.randomUUID().toString());

@@ -54,6 +54,7 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-activemq-all}"
             id="activemq-all"
+            mvn_uri="mvn:org.apache.activemq/activemq-all/${activemq.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-activemq-all}"
             bundleID="" />
 
@@ -89,60 +90,70 @@
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-activemq-spring}"
             id="activemq-spring"
+            mvn_uri="mvn:org.apache.activemq/activemq-spring/${activemq.version}"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-activemq-spring}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-activemq-broker}"
             id="activemq-broker"
+            mvn_uri="mvn:org.apache.activemq/activemq-broker/${activemq.version}"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-activemq-broker}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-activemq-client}"
             id="activemq-client"
+            mvn_uri="mvn:org.apache.activemq/activemq-client/${activemq.version}"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-activemq-client}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-activemq-camel}"
             id="activemq-camel"
+            mvn_uri="mvn:org.apache.activemq/activemq-camel/${activemq.version}"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-activemq-camel}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-activemq-openwire-legacy}"
             id="activemq-openwire-legacy"
+             mvn_uri="mvn:org.apache.activemq/activemq-openwire-legacy/${activemq.version}"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-activemq-openwire-legacy}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-activemq-pool}"
             id="activemq-pool"
+            mvn_uri="mvn:org.apache.activemq/activemq-pool/${activemq.version}"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-activemq-pool}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-activemq-jms-pool}"
             id="activemq-jms-pool"
+            mvn_uri="mvn:org.apache.activemq/activemq-jms-pool/${activemq.version}"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-activemq-jms-pool}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-geronimo-j2ee-management_1.1_spec}"
             id="geronimo-j2ee-management_1.1_spec"
+            mvn_uri="mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/1.0.1"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-geronimo-j2ee-management_1.1_spec}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-geronimo-jta_1.1_spec}"
             id="geronimo-jta_1.1_spec"
+            mvn_uri="mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-geronimo-jta_1.1_spec}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="${tesb-xbean-spring}"
             id="xbean-spring"
+            mvn_uri="mvn:org.apache.xbean/xbean-spring/4.18"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-xbean-spring}"
             bundleID="" />
 
@@ -155,6 +166,7 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-core}"
             id="camel-core"
+            mvn_uri="mvn:org.apache.camel/camel-core/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-core}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.libraries.esb"
@@ -176,11 +188,13 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-spring}"
             id="camel-spring"
+            mvn_uri="mvn:org.apache.camel/camel-spring/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-spring}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-blueprint}"
             id="camel-blueprint"
+            mvn_uri="mvn:org.apache.camel/camel-blueprint/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-blueprint}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
@@ -191,6 +205,7 @@
         <libraryNeeded context="plugin:org.talend.libraries.esb"
             name="geronimo-ws-metadata_2.0_spec-1.1.3.jar"
             id="geronimo-ws-metadata"
+            mvn_uri="mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/1.1.3"
             uripath="platform:/plugin/org.talend.libraries.esb/lib/geronimo-ws-metadata_2.0_spec-1.1.3.jar"
             bundleID="" />
 
@@ -210,16 +225,19 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-cxf}"
             id="camel-cxf"
+            mvn_uri="mvn:org.apache.camel/camel-cxf/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-cxf}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-cxf-transport}"
             id="camel-cxf-transport"
+            mvn_uri="mvn:org.apache.camel/camel-cxf-transport/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-cxf-transport}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-http-common}"
             id="camel-http-common"
+            mvn_uri="mvn:org.apache.camel/camel-http-common/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-http-common}"
             bundleID="" />    
 
@@ -239,6 +257,7 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="camel-groovy-alldep-${camel.version}.jar"
             id="camel-groovy"
+            mvn_uri="mvn:org.apache.camel/camel-groovy/${camel.version}"
             uripath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-groovy-alldep-${camel.version}.jar"
             bundleID="" />
 
@@ -260,30 +279,35 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="camel-jackson"
               name="${tesb-camel-jackson}"
+              mvn_uri="mvn:org.apache.camel/camel-jackson/${camel.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-jackson}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="jackson-core"
               name="${tesb-jackson-core}"
+              mvn_uri="mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jackson-core}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="jackson-module-jaxb-annotations"
               name="${tesb-jackson-module-jaxb-annotations}"
+              mvn_uri="mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/${jackson.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jackson-module-jaxb-annotations}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="jackson-databind"
               name="${tesb-jackson-databind}"
+              mvn_uri="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.databind.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jackson-databind}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="jackson-annotations"
               name="${tesb-jackson-annotations}"
+              mvn_uri="mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jackson-annotations}">
         </libraryNeeded>
         <libraryNeededGroup
@@ -310,6 +334,7 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-http}"
             id="camel-http"
+            mvn_uri="mvn:org.apache.camel/camel-http/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-http}"
             bundleID="" />
         <!-- ${tesb-commons-httpclient} -->
@@ -321,6 +346,7 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
 			name="${tesb-camel-http-common}"
 			id="camel-http-common"
+            mvn_uri="mvn:org.apache.camel/camel-http-common/${camel.version}"
 			uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-http-common}"
 			bundleID="" />
         <!-- ${tesb-commons-codec} -->
@@ -345,31 +371,37 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-jms}"
             id="camel-jms"
+            mvn_uri="mvn:org.apache.camel/camel-jms/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-jms}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-geronimo-jms_1.1_spec}"
             id="geronimo-jms_1.1_spec"
+            mvn_uri="mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-geronimo-jms_1.1_spec}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-spring-jms}"
             id="spring-jms"
+            mvn_uri="mvn:org.springframework/spring-jms/${spring.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-spring-jms}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-spring-messaging}"
             id="spring-messaging"
+            mvn_uri="mvn:org.springframework/spring-messaging/${spring.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-spring-messaging}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-commons-pool2}"
             id="commons-pool2"
+            mvn_uri="mvn:org.apache.commons/commons-pool2/${commons-pool2.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-commons-pool2}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-javax.jms-api}"
             id="javax.jms-api"
+            mvn_uri="mvn:javax.jms/javax.jms-api/${jms-api.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-javax.jms-api}"
             bundleID="" />
         <libraryNeededGroup
@@ -386,56 +418,67 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-amqp}"
             id="camel-amqp"
+            mvn_uri="mvn:org.apache.camel/camel-amqp/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-amqp}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-qpid-jms-client}"
             id="qpid-jms-client"
+            mvn_uri="mvn:org.apache.qpid/qpid-jms-client/${qpid-jms-client.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-qpid-jms-client}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-proton-j}"
             id="proton-j"
+            mvn_uri="mvn:org.apache.qpid/proton-j/${qpid-proton-j.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-proton-j}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-netty-buffer}"
             id="netty-buffer"
+            mvn_uri="mvn:io.netty/netty-buffer/${io-netty.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-netty-buffer}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-netty-common}"
             id="netty-common"
+            mvn_uri="mvn:io.netty/netty-common/${io-netty.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-netty-common}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-netty-handler}"
             id="netty-handler"
+            mvn_uri="mvn:io.netty/netty-handler/${io-netty.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-netty-handler}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-netty-codec}"
             id="netty-codec"
+            mvn_uri="mvn:io.netty/netty-codec/${io-netty.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-netty-codec}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-netty-transport}"
             id="netty-transport"
+            mvn_uri="mvn:io.netty/netty-transport/${io-netty.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-netty-transport}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-netty-codec-http}"
             id="netty-codec-http"
+            mvn_uri="mvn:io.netty/netty-codec-http/${io-netty.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-netty-codec-http}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-netty-transport-native-epoll}"
             id="netty-transport-native-epoll"
+            mvn_uri="mvn:io.netty/netty-transport-native-epoll/${io-netty.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-netty-transport-native-epoll}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-netty-resolver}"
             id="netty-resolver"
+            mvn_uri="mvn:io.netty/netty-resolver/${io-netty.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-netty-resolver}"
             bundleID="" />
 
@@ -460,6 +503,7 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-mqtt}"
             id="camel-mqtt"
+            mvn_uri="mvn:org.apache.camel/camel-mqtt/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-mqtt}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
@@ -480,6 +524,7 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-hawtbuf}"
             id="hawtbuf"
+            mvn_uri="mvn:org.fusesource.hawtbuf/hawtbuf/${hawtbuf.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-hawtbuf}"
             bundleID="" />
 
@@ -497,12 +542,14 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-mail}"
             id="camel-mail"
+            mvn_uri="mvn:org.apache.camel/camel-mail/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-mail}"
             bundleID="" />
         <!-- ${tesb-mail} -->
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-mail}"
             id="javax.mail"
+            mvn_uri="mvn:javax.mail/mail/${mail.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-mail}"
             bundleID="" />
 
@@ -517,6 +564,7 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-servlet}"
             id="camel-servlet"
+            mvn_uri="mvn:org.apache.camel/camel-servlet/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-servlet}"
             bundleID="" />
 
@@ -531,16 +579,19 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-jetty}"
             id="camel-jetty"
+            mvn_uri="mvn:org.apache.camel/camel-jetty/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-jetty}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-jetty-common}"
             id="camel-jetty-common"
+            mvn_uri="mvn:org.apache.camel/camel-jetty-common/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-jetty-common}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-jetty9}"
             id="camel-jetty9"
+            mvn_uri="mvn:org.apache.camel/camel-jetty9/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-jetty9}"
             bundleID="" />
 
@@ -556,31 +607,36 @@
             <library id="jetty-all" />
         </libraryNeededGroup>
         
-        <libraryNeeded context="plugin:org.talend.libraries.esb"
+        <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-jetty-all}"
             id="jetty-all"
+            mvn_uri="mvn:org.eclipse.jetty.aggregate/jetty-all/${jetty-all.version}/jar/uber"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jetty-all}"
             bundleID="" />
 
        <libraryNeeded context="plugin:javax.servlet"
             name="${tesb-javax.servlet-api}"
             id="javax.servlet-api"
+            mvn_uri="mvn:javax.servlet/javax.servlet-api/${javax.servlet-api.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-javax.servlet-api}"
             bundleID="" />
 
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-xstream}"
             id="camel-xstream"
+            mvn_uri="mvn:org.apache.camel/camel-xstream/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-xstream}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-xstream}"
             id="xstream"
+            mvn_uri="mvn:com.thoughtworks.xstream/xstream/${xstream.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-xstream}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-xpp3}"
             id="xpp3"
+            mvn_uri="mvn:org.ogce/xpp3/${xpp3.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-xpp3}"
             bundleID="" />
 
@@ -600,16 +656,19 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-ftp}"
             id="camel-ftp"
+            mvn_uri="mvn:org.apache.camel/camel-ftp/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-ftp}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="camel-${tesb-jsch}"
             id="jsch"
+            mvn_uri="mvn:com.jcraft/jsch/${jsch.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jsch}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-commons-net}"
             id="commons-net"
+            mvn_uri="mvn:commons-net/commons-net/${commons-net.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-commons-net}"
             bundleID="" />
 
@@ -625,16 +684,19 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-flatpack}"
             id="camel-flatpack"
+            mvn_uri="mvn:org.apache.camel/camel-flatpack/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-flatpack}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-flatpack}"
             id="flatpack"
+            mvn_uri="mvn:net.sf.flatpack/flatpack/${flatpack.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-flatpack}"
             bundleID="" />
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-jdom}"
             id="jdom"
+            mvn_uri="mvn:org.jdom/jdom/${jdom.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jdom}"
             bundleID="" />
 
@@ -692,12 +754,14 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="camel-test-spring"
               name="${tesb-camel-test-spring}"
+              mvn_uri="mvn:org.apache.camel/camel-test-spring/${camel.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-test-spring}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="camel-test"
               name="${tesb-camel-test}"
+              mvn_uri="mvn:org.apache.camel/camel-test/${camel.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-test}">
         </libraryNeeded>
         <libraryNeeded
@@ -784,12 +848,14 @@
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-azure}"
             id="camel-azure"
+            mvn_uri="mvn:org.apache.camel/camel-azure/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-azure}"
             bundleID="" />
         
         <libraryNeeded context="plugin:org.talend.designer.camel.components.localprovider"
             name="${tesb-camel-aws}"
             id="camel-aws"
+            mvn_uri="mvn:org.apache.camel/camel-aws/${camel.version}"
             uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-aws}"
             bundleID="" />
 
@@ -839,6 +905,7 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="jackson-jaxrs-json-provider"
               name="${tesb-jackson-jaxrs-json-provider}"
+              mvn_uri="mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jackson-jaxrs-json-provider}">
         </libraryNeeded>
         
@@ -846,6 +913,7 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="jackson-jaxrs-xml-provider"
               name="${tesb-jackson-jaxrs-xml-provider}"
+              mvn_uri="mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-xml-provider/${jackson.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jackson-jaxrs-xml-provider}">
         </libraryNeeded>
         
@@ -853,6 +921,7 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="jackson-jaxrs-base"
               name="${tesb-jackson-jaxrs-base}"
+              mvn_uri="mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jackson-jaxrs-base}">
         </libraryNeeded>
         
@@ -860,6 +929,7 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="jackson-dataformat-xml"
               name="${tesb-jackson-dataformat-xml}"
+              mvn_uri="mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-xml/${jackson.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-jackson-dataformat-xml}">
         </libraryNeeded>
         
@@ -956,6 +1026,7 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="camel-hawtdb"
               name="${tesb-camel-hawtdb}"
+              mvn_uri="mvn:org.apache.camel/camel-hawtdb/${camel.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-hawtdb}">
         </libraryNeeded>
         <libraryNeeded
@@ -968,37 +1039,43 @@
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
 			name="jackson-annotations-${jackson.version}.jar"
 			id="azure-jackson-annotations"
+			mvn_uri="mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}"
 			uripath="platform:/plugin/org.talend.libraries.esb/lib/jackson-annotations-${jackson.version}.jar"
 			bundleID="" />
 
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
 			name="jackson-core-${jackson.version}.jar"
 			id="azure-jackson-core"
+			mvn_uri="mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}"
 			uripath="platform:/plugin/org.talend.libraries.esb/lib/jackson-core-${jackson.version}.jar"
 			bundleID="" />
 			
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
-			name="jackson-databind-${jackson.version}.jar"
+			name="jackson-databind-${jackson.databind.version}.jar"
 			id="azure-jackson-databind"
-			uripath="platform:/plugin/org.talend.libraries.esb/lib/jackson-databind-${jackson.version}.jar"
+			mvn_uri="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.databind.version}"
+			uripath="platform:/plugin/org.talend.libraries.esb/lib/jackson-databind-${jackson.databind.version}.jar"
 			bundleID="" />        
         
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
 			name="jackson-annotations-${jackson.version}.jar"
 			id="aws-jackson-annotations"
+			mvn_uri="mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson.version}"
 			uripath="platform:/plugin/org.talend.libraries.esb/lib/jackson-annotations-${jackson.version}.jar"
 			bundleID="" />
 
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
 			name="jackson-core-${jackson.version}.jar"
 			id="aws-jackson-core"
+			mvn_uri="mvn:com.fasterxml.jackson.core/jackson-core/${jackson.version}"
 			uripath="platform:/plugin/org.talend.libraries.esb/lib/jackson-core-${jackson.version}.jar"
 			bundleID="" />
 			
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
-			name="jackson-databind-${jackson.version}.jar"
+			name="jackson-databind-${jackson.databind.version}.jar"
 			id="aws-jackson-databind"
-			uripath="platform:/plugin/org.talend.libraries.esb/lib/jackson-databind-${jackson.version}.jar"
+			mvn_uri="mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.databind.version}"
+			uripath="platform:/plugin/org.talend.libraries.esb/lib/jackson-databind-${jackson.databind.version}.jar"
 			bundleID="" />
         
         <libraryNeededGroup
@@ -1055,30 +1132,35 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="camel-jsonpath"
               name="${tesb-camel-jsonpath}"
+              mvn_uri="mvn:org.apache.camel/camel-jsonpath/${camel.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-jsonpath}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="json-path"
               name="${tesb-json-path}"
+              mvn_uri="mvn:com.jayway.jsonpath/json-path/${json-path-version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-json-path}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="json-smart-action"
               name="${tesb-json-smart-action}"
+              mvn_uri="mvn:net.minidev/json-smart-action/${json-smart-action-version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-json-smart-action}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="accessors-smart"
               name="${tesb-accessors-smart}"
+              mvn_uri="mvn:net.minidev/accessors-smart/${accessors-smart-version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-accessors-smart}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="asm"
               name="${tesb-asm}"
+              mvn_uri="mvn:org.ow2.asm/asm/${asm-version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-asm}">
         </libraryNeeded>
 
@@ -1097,12 +1179,14 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="camel-saxon"
               name="${tesb-camel-saxon}"
+              mvn_uri="mvn:org.apache.camel/camel-saxon/${camel.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-saxon}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="saxon-he"
               name="${tesb-Saxon-HE}"
+              mvn_uri="mvn:net.sf.saxon/Saxon-HE/${Saxon-HE-version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-Saxon-HE}"
               bundleID="" />
 
@@ -1127,24 +1211,28 @@
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="camel-kafka"
               name="${tesb-camel-kafka}"
+              mvn_uri="mvn:org.apache.camel/camel-kafka/${camel.version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-camel-kafka}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="kafka-clients"
               name="${tesb-kafka-clients}"
+              mvn_uri="mvn:org.apache.kafka/kafka-clients/${kafka-clients-version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-kafka-clients}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="snappy-java"
               name="${tesb-snappy-java}"
+              mvn_uri="mvn:org.xerial.snappy/snappy-java/${snappy-java-version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-snappy-java}">
         </libraryNeeded>
         <libraryNeeded
               context="plugin:org.talend.designer.camel.components.localprovider"
               id="lz4"
               name="${tesb-lz4-java}"
+              mvn_uri="mvn:org.lz4/lz4-java/${lz4-version}"
               uripath="platform:/plugin/org.talend.designer.camel.components.localprovider/lib/${tesb-lz4-java}">
         </libraryNeeded>
         <libraryNeededGroup
