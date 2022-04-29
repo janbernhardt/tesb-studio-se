@@ -304,11 +304,9 @@
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/validation-api-2.0.1.Final.jar"
                 REQUIRED_IF="(EXPOSE_SWAGGER_SPEC == 'true')"/>
 
-            <IMPORT NAME="swagger-ui"
-                    MODULE="swagger-ui-6.4.0.jar"
-                    MVN="mvn:org.talend.libraries/swagger-ui/6.4.0"
-                    UrlPath="platform:/plugin/org.talend.libraries.swagger/lib/swagger-ui-6.4.0.jar"
-                    REQUIRED_IF="(EXPOSE_SWAGGER_SPEC == 'true')"/>
+            <IMPORT MODULE="swagger-ui-3.52.5.jar" MVN="mvn:org.webjars/swagger-ui/3.52.5" NAME="swagger-ui-3.52.5"
+                UrlPath="platform:/plugin/org.talend.libraries.esb/lib/swagger-ui-3.52.5.jar"
+                REQUIRED_IF="(EXPOSE_SWAGGER_SPEC == 'true')"/>
 
             <IMPORT MODULE="snakeyaml-1.24.jar" MVN="mvn:org.talend.libraries/snakeyaml/1.26" NAME="snakeyaml-1.26"
                 UrlPath="platform:/plugin/org.talend.libraries.esb/lib/snakeyaml-1.26.jar"
