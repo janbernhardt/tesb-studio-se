@@ -110,7 +110,8 @@ if ( "true".equals(System.getProperty("org.talend.studio.route.job.inloop")) ) {
         } // 3
 %>
 			//set output as fault    
-	        //routerExchange_<%=cid%>.getOut().setFault(true);
+	                String data = routerExchange.getContext().getTypeConverter().convertTo(String.class, routerExchange, routerExchange_tRouteFault_1.getIn().getBody());
+			routerExchange_tRouteFault_1.setException(new org.apache.camel.CamelException(data));
 <%
     } // 2
 } // 1
