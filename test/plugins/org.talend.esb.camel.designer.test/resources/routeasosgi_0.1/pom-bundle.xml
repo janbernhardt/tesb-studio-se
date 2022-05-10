@@ -79,17 +79,17 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>spring-beans-5.3.18</artifactId>
+      <artifactId>spring-beans-5.3.19</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>spring-context-5.3.18</artifactId>
+      <artifactId>spring-context-5.3.19</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>spring-core-5.3.18</artifactId>
+      <artifactId>spring-core-5.3.19</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
