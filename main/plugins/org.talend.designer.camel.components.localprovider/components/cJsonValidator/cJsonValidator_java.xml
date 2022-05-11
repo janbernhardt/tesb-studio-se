@@ -1,0 +1,51 @@
+<COMPONENT>
+
+	<HEADER PLATEFORM="ALL" SERIAL="" VERSION="0.1" STATUS="ALPHA" COMPATIBILITY="ALL" AUTHOR="Talend" RELEASE_DATE="20220510A" STARTABLE="false">
+		<SIGNATURE />
+	</HEADER>
+
+	<FAMILIES>
+		<FAMILY>Data Quality</FAMILY>
+	</FAMILIES>
+
+	<DOCUMENTATION>
+		<URL>https://camel.apache.org/components/3.11.x/json-validator-component.html</URL>
+	</DOCUMENTATION>
+
+	<CONNECTORS>
+		<CONNECTOR CTYPE="ROUTE" MIN_INPUT="1" MAX_INPUT="1" MAX_OUTPUT="1" MIN_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_WHEN" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_OTHER" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_TRY" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_CATCH" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_FINALLY" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_ENDBLOCK" MAX_INPUT="1" MAX_OUTPUT="0" />
+	</CONNECTORS>
+
+	<PARAMETERS>
+		<PARAMETER NAME="RESOURCE_URI" FIELD="TEXT" NUM_ROW="1" REQUIRED="true">
+			<DEFAULT>"file://"</DEFAULT>
+		</PARAMETER>
+	</PARAMETERS>
+
+	<ADVANCED_PARAMETERS>
+		<PARAMETER NAME="URI_OPTIONS" FIELD="TABLE" NUM_ROW="10" NB_LINES="5">
+			<ITEMS>
+				<ITEM NAME="NAME" FIELD="TEXT" />
+				<ITEM NAME="VALUE" />
+			</ITEMS>
+		</PARAMETER>
+	</ADVANCED_PARAMETERS>
+
+	<CODEGENERATION>
+		<IMPORTS>
+			<IMPORT MODULE_GROUP="jackson-providers" REQUIRED="true" />
+			<IMPORT MODULE="commons-lang3-3.8.1.jar" MVN="mvn:org.apache.commons/commons-lang3/3.8.1" NAME="commons-lang3-3.8.1.jar" REQUIRED="true" />
+			<IMPORT MODULE="json-schema-validator-1.0.53.jar" MVN="mvn:com.networknt/json-schema-validator/1.0.53" NAME="json-schema-validator-1.0.53.jar" UrlPath="https://repo1.maven.org/maven2/com/networknt/json-schema-validator/1.0.53/json-schema-validator-1.0.53.jar" REQUIRED="true" />
+			<!-- <IMPORT MODULE="camel-jackson-alldep-3.11.1.jar" MVN="mvn:org.talend.libraries/camel-jackson-alldep-3.11.1/6.0.0" NAME="talend-camel-jackson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-jackson-alldep-3.11.1.jar" REQUIRED="true" /> -->
+			<IMPORT MODULE="camel-json-validator-3.11.1.jar" MVN="mvn:org.apache.camel/camel-json-validator/3.11.1" NAME="camel-json-validator-3.11.1.jar" UrlPath="https://repo1.maven.org/maven2/org/apache/camel/camel-json-validator/3.11.1/camel-json-validator-3.11.1.jar" REQUIRED="true"/>
+		</IMPORTS>
+	</CODEGENERATION>
+
+	<RETURNS />
+</COMPONENT>
