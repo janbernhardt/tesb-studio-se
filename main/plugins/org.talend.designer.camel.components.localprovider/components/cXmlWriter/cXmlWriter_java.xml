@@ -1,0 +1,58 @@
+<COMPONENT>
+
+	<HEADER PLATEFORM="ALL" SERIAL="" VERSION="0.1" STATUS="ALPHA" COMPATIBILITY="ALL" AUTHOR="Talend" RELEASE_DATE="20220510A" STARTABLE="false">
+		<SIGNATURE />
+	</HEADER>
+
+	<FAMILIES>
+		<FAMILY>Transformation/Data Formats</FAMILY>
+	</FAMILIES>
+
+	<DOCUMENTATION>
+		<URL>https://camel.apache.org/components/3.14.x/dataformats/json-jackson-dataformat.html</URL>
+	</DOCUMENTATION>
+
+	<CONNECTORS>
+		<CONNECTOR CTYPE="ROUTE" MIN_INPUT="1" MAX_INPUT="1" MAX_OUTPUT="1" MIN_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_WHEN" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_OTHER" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_TRY" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_CATCH" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_FINALLY" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_ENDBLOCK" MAX_INPUT="1" MAX_OUTPUT="0" />
+	</CONNECTORS>
+
+	<PARAMETERS>
+		<PARAMETER NAME="XML_LIBRARY" FIELD="OPENED_LIST" NUM_ROW="1" REQUIRED="true" READONLY="false">
+			<ITEMS DEFAULT="JACKSON_XML">
+				<ITEM NAME="JACKSON_XML" VALUE="jacksonxml" />
+				<ITEM NAME="JAXB" VALUE="jaxb" />
+				<ITEM NAME="XSTREAM" VALUE="xstream" />
+			</ITEMS>
+		</PARAMETER>
+		<PARAMETER NAME="PRETTY_PRINT" FIELD="CHECK" NUM_ROW="2" SHOW_IF="XML_LIBRARY == 'jacksonxml' || XML_LIBRARY == 'jaxb'">
+			<DEFAULT>false</DEFAULT>
+		</PARAMETER>
+	</PARAMETERS>
+
+	<ADVANCED_PARAMETERS>
+		<!-- Not implemented -->
+		<PARAMETER NAME="LIBRARY_OPTIONS" FIELD="TABLE" NUM_ROW="1" NB_LINES="5" SHOW="false">
+			<ITEMS>
+				<ITEM NAME="NAME" FIELD="TEXT">
+				</ITEM>
+				<ITEM NAME="VALUE" />
+			</ITEMS>
+		</PARAMETER>
+	</ADVANCED_PARAMETERS>
+
+	<CODEGENERATION>
+		<IMPORTS>
+			<IMPORT MODULE="camel-jacksonxml-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-jackson-alldep-${camel.version}/6.0.0" NAME="talend-camel-jackson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-jackson-alldep-${camel.version}.jar" REQUIRED_IF="XML_LIBRARY == 'jacksonxml'" />
+			<IMPORT MODULE="camel-jaxb-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-jaxb-alldep-${camel.version}/6.0.0" NAME="talend-camel-jaxb" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-jaxb-alldep-${camel.version}.jar" REQUIRED_IF="XML_LIBRARY == 'jaxb'" />
+			<IMPORT MODULE="camel-xstream-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-xstream-alldep-${camel.version}/6.0.0" NAME="talend-camel-xstream" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-xstream-alldep-${camel.version}.jar" REQUIRED_IF="XML_LIBRARY == 'xstream'" />
+		</IMPORTS>
+	</CODEGENERATION>
+
+	<RETURNS />
+</COMPONENT>

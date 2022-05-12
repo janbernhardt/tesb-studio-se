@@ -1,0 +1,31 @@
+<%@ jet 
+imports="
+    org.talend.core.model.process.INode 
+    org.talend.core.model.process.ElementParameterParser 
+    org.talend.core.model.process.IConnection
+    org.talend.core.model.process.IElementParameter
+    org.talend.designer.codegen.config.CodeGeneratorArgument
+    org.talend.designer.codegen.config.CamelEndpointBuilder
+    org.talend.core.model.components.IComponent
+    java.util.List
+    java.util.Map
+" 
+%>
+<%
+	CodeGeneratorArgument codeGenArgument = (CodeGeneratorArgument) argument;
+	INode node = (INode)codeGenArgument.getArgument();
+  String cid = node.getUniqueName();
+
+	String xmlLib = ElementParameterParser.getValue(node, "__XML_LIBRARY__");
+	String prettyPrint = ElementParameterParser.getValue(node, "__PRETTY_PRINT__");
+
+  if ("jacksonxml".equals(xmlLib) || "jaxb".equals(xmlLib)) {
+%>
+	.marshal().<%=xmlLib%>(<%=prettyPrint%>)
+<%
+  } else {
+%>
+	.marshal().<%=xmlLib%>()
+<%
+  }
+%>
