@@ -14,13 +14,24 @@ imports="
 <%
 	CodeGeneratorArgument codeGenArgument = (CodeGeneratorArgument) argument;
 	INode node = (INode)codeGenArgument.getArgument();
+  INode beanRefNode = node;
   String cid = node.getUniqueName();
 
 	String xmlLib = ElementParameterParser.getValue(node, "__XML_LIBRARY__");
 	String unmarshalType = ElementParameterParser.getValue(node, "__UNMARSHAL_TYPE__");
 
   if ("custom".equals(xmlLib)) {
-    String id = ElementParameterParser.getValue(node, "__CUSTOM_REFERENCE__");
+    Object desNode= ElementParameterParser.getValue(node, "____CUSTOM_REFERENCE____");
+    if(desNode!=null){
+      String desNodeName = desNode.toString();	
+      for(INode aNode : node.getProcess().getGraphicalNodes()) {
+        if(aNode.getUniqueName().equals(desNodeName)){
+          beanRefNode=aNode;
+          break;
+        }
+      }
+    }
+    String id = ElementParameterParser.getValue(beanRefNode, "__ID__");
 %>
   .unmarshal().custom(<%=id%>)
 <%    

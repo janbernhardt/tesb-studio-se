@@ -23,35 +23,28 @@
 	</CONNECTORS>
 
 	<PARAMETERS>
-		<PARAMETER NAME="JSON_LIBRARY" FIELD="OPENED_LIST" NUM_ROW="1" REQUIRED="true" READONLY="false">
+		<PARAMETER NAME="JSON_LIBRARY" FIELD="CLOSED_LIST" NUM_ROW="1" REQUIRED="true" READONLY="false">
 			<ITEMS DEFAULT="GSON">
 				<ITEM NAME="JACKSON" VALUE="org.apache.camel.model.dataformat.JsonLibrary.Jackson" />
 				<ITEM NAME="GSON" VALUE="org.apache.camel.model.dataformat.JsonLibrary.Gson" />
-				<ITEM NAME="XSTREAM" VALUE="org.apache.camel.model.dataformat.JsonLibrary.XStream" />
 				<ITEM NAME="FASTJSON" VALUE="org.apache.camel.model.dataformat.JsonLibrary.Fastjson" />
+				<ITEM NAME="CUSTOM" VALUE="custom" />
 			</ITEMS>
 		</PARAMETER>
-		<PARAMETER NAME="PRETTY_PRINT" FIELD="CHECK" NUM_ROW="2" >
+		<PARAMETER NAME="PRETTY_PRINT" FIELD="CHECK" NUM_ROW="2" SHOW_IF="JSON_LIBRARY != 'custom'">
 			<DEFAULT>false</DEFAULT>
+		</PARAMETER>
+		<PARAMETER NAME="CUSTOM_REFERENCE" FIELD="ROUTE_COMPONENT_TYPE" FILTER="cBeanRegister" NUM_ROW="2" SHOW_IF="JSON_LIBRARY == 'custom'">
 		</PARAMETER>
 	</PARAMETERS>
 
 	<ADVANCED_PARAMETERS>
-		<!-- Not implemented -->
-		<PARAMETER NAME="LIBRARY_OPTIONS" FIELD="TABLE" NUM_ROW="1" NB_LINES="5" SHOW="false">
-			<ITEMS>
-				<ITEM NAME="NAME" FIELD="TEXT">
-				</ITEM>
-				<ITEM NAME="VALUE" />
-			</ITEMS>
-		</PARAMETER>
 	</ADVANCED_PARAMETERS>
 
 	<CODEGENERATION>
 		<IMPORTS>
 			<IMPORT MODULE="camel-jackson-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-jackson-alldep-${camel.version}/6.0.0" NAME="talend-camel-jackson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-jackson-alldep-${camel.version}.jar" REQUIRED_IF="JSON_LIBRARY == 'org.apache.camel.model.dataformat.JsonLibrary.Jackson'" />
 			<IMPORT MODULE="camel-gson-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-gson-alldep-${camel.version}/6.0.0" NAME="talend-camel-gson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-gson-alldep-${camel.version}.jar" REQUIRED_IF="JSON_LIBRARY == 'org.apache.camel.model.dataformat.JsonLibrary.Gson'" />
-			<IMPORT MODULE="camel-xstream-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-xstream-alldep-${camel.version}/6.0.0" NAME="talend-camel-xstream" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-xstream-alldep-${camel.version}.jar" REQUIRED_IF="JSON_LIBRARY == 'org.apache.camel.model.dataformat.JsonLibrary.XStream'" />
 			<IMPORT MODULE="camel-fastjson-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-fastjson-alldep-${camel.version}/6.0.0" NAME="talend-camel-fastjson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-fastjson-alldep-${camel.version}.jar" REQUIRED_IF="JSON_LIBRARY == 'org.apache.camel.model.dataformat.JsonLibrary.Fastjson'" />
 		</IMPORTS>
 	</CODEGENERATION>

@@ -14,10 +14,30 @@ imports="
 <%
 	CodeGeneratorArgument codeGenArgument = (CodeGeneratorArgument) argument;
 	INode node = (INode)codeGenArgument.getArgument();
+  INode beanRefNode = node;
   String cid = node.getUniqueName();
 
 	String jsonLib = ElementParameterParser.getValue(node, "__JSON_LIBRARY__");
-	String prettyPrint = ElementParameterParser.getValue(node, "__PRETTY_PRINT__");
+
+  if ("custom".equals(jsonLib)) {
+    Object desNode= ElementParameterParser.getValue(node, "____CUSTOM_REFERENCE____");
+    if(desNode!=null){
+      String desNodeName = desNode.toString();	
+      for(INode aNode : node.getProcess().getGraphicalNodes()) {
+        if(aNode.getUniqueName().equals(desNodeName)){
+          beanRefNode=aNode;
+          break;
+        }
+      }
+    }
+    String id = ElementParameterParser.getValue(beanRefNode, "__ID__");
 %>
-	
+  .unmarshal().custom(<%=id%>)
+<%    
+  } else {
+	  String prettyPrint = ElementParameterParser.getValue(node, "__PRETTY_PRINT__");
+%>
 	.marshal().json(<%=jsonLib%>, <%=prettyPrint%>)
+<%    
+  }
+%>
