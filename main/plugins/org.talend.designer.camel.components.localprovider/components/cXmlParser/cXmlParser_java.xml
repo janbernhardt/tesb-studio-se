@@ -23,14 +23,18 @@
 	</CONNECTORS>
 
 	<PARAMETERS>
-		<PARAMETER NAME="XML_LIBRARY" FIELD="OPENED_LIST" NUM_ROW="1" REQUIRED="true" READONLY="false">
+		<PARAMETER NAME="XML_LIBRARY" FIELD="CLOSEED_LIST" NUM_ROW="1" REQUIRED="true" READONLY="false">
 			<ITEMS DEFAULT="JACKSON_XML">
 				<ITEM NAME="JACKSON_XML" VALUE="jacksonxml" />
 				<ITEM NAME="XSTREAM" VALUE="xstream" />
+				<ITEM NAME="CUSTOM" VALUE="custom" />
 			</ITEMS>
 		</PARAMETER>
-		<PARAMETER NAME="UNMARSHAL_TYPE" FIELD="TEXT" NUM_ROW="2">
+		<PARAMETER NAME="UNMARSHAL_TYPE" FIELD="TEXT" NUM_ROW="2" SHOW_IF="XML_LIBRARY != 'custom'">
 			<DEFAULT>java.util.Map.class</DEFAULT>
+		</PARAMETER>
+		<PARAMETER NAME="REF_ID" FIELD="TEXT" NUM_ROW="2"  REQUIRED="true" SHOW_IF="XML_LIBRARY == 'custom'">
+			<DEFAULT></DEFAULT>
 		</PARAMETER>
 	</PARAMETERS>
 
@@ -47,7 +51,7 @@
 
 	<CODEGENERATION>
 		<IMPORTS>
-			<IMPORT MODULE="camel-jacksonxml-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-jackson-alldep-${camel.version}/6.0.0" NAME="talend-camel-jackson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-jackson-alldep-${camel.version}.jar" REQUIRED_IF="XML_LIBRARY == 'jacksonxml'" />
+			<IMPORT MODULE="camel-jacksonxml-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-jacksonxml-alldep-${camel.version}/6.0.0" NAME="talend-camel-jacksonxml" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-jacksonxml-alldep-${camel.version}.jar" REQUIRED_IF="XML_LIBRARY == 'jacksonxml'" />
 			<IMPORT MODULE="camel-xstream-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-xstream-alldep-${camel.version}/6.0.0" NAME="talend-camel-xstream" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-xstream-alldep-${camel.version}.jar" REQUIRED_IF="XML_LIBRARY == 'xstream'" />
 		</IMPORTS>
 	</CODEGENERATION>

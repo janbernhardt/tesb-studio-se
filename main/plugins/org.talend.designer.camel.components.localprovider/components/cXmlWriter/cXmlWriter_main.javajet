@@ -17,9 +17,14 @@ imports="
   String cid = node.getUniqueName();
 
 	String xmlLib = ElementParameterParser.getValue(node, "__XML_LIBRARY__");
-	String prettyPrint = ElementParameterParser.getValue(node, "__PRETTY_PRINT__");
 
-  if ("jacksonxml".equals(xmlLib) || "jaxb".equals(xmlLib)) {
+  if ("custom".equals(xmlLib)) {
+    String id = ElementParameterParser.getValue(node, "__REF_ID__");
+%>
+  .marshal().custom(<%=id%>)
+<%    
+  } else if ("jacksonxml".equals(xmlLib) || "jaxb".equals(xmlLib)) {
+	  String prettyPrint = ElementParameterParser.getValue(node, "__PRETTY_PRINT__");
 %>
 	.marshal().<%=xmlLib%>(<%=prettyPrint%>)
 <%

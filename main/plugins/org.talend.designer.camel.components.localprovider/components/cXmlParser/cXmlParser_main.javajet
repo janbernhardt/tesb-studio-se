@@ -19,7 +19,12 @@ imports="
 	String xmlLib = ElementParameterParser.getValue(node, "__XML_LIBRARY__");
 	String unmarshalType = ElementParameterParser.getValue(node, "__UNMARSHAL_TYPE__");
 
-  if (unmarshalType == null || unmarshalType.isEmpty()) {
+  if ("custom".equals(xmlLib)) {
+    String id = ElementParameterParser.getValue(node, "__REF_ID__");
+%>
+  .unmarshal().custom(<%=id%>)
+<%    
+  } else if (unmarshalType == null || unmarshalType.isEmpty()) {
 %>
 	.unmarshal().<%=xmlLib%>()
 <%
