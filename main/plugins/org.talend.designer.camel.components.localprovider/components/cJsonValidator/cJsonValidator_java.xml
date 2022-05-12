@@ -42,8 +42,7 @@
 			<IMPORT MODULE_GROUP="jackson-providers" REQUIRED="true" />
 			<IMPORT MODULE="commons-lang3-3.8.1.jar" MVN="mvn:org.apache.commons/commons-lang3/3.8.1" NAME="commons-lang3-3.8.1.jar" REQUIRED="true" />
 			<IMPORT MODULE="json-schema-validator-1.0.53.jar" MVN="mvn:com.networknt/json-schema-validator/1.0.53" NAME="json-schema-validator-1.0.53.jar" UrlPath="https://repo1.maven.org/maven2/com/networknt/json-schema-validator/1.0.53/json-schema-validator-1.0.53.jar" REQUIRED="true" />
-			<!-- <IMPORT MODULE="camel-jackson-alldep-3.11.1.jar" MVN="mvn:org.talend.libraries/camel-jackson-alldep-3.11.1/6.0.0" NAME="talend-camel-jackson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-jackson-alldep-3.11.1.jar" REQUIRED="true" /> -->
-			<IMPORT MODULE="camel-json-validator-3.11.1.jar" MVN="mvn:org.apache.camel/camel-json-validator/3.11.1" NAME="camel-json-validator-3.11.1.jar" UrlPath="https://repo1.maven.org/maven2/org/apache/camel/camel-json-validator/3.11.1/camel-json-validator-3.11.1.jar" REQUIRED="true"/>
+			<IMPORT MODULE="camel-json-validator-${camel.version}.jar" MVN="mvn:org.apache.camel/camel-json-validator/${camel.version}" NAME="camel-json-validator-${camel.version}.jar" UrlPath="https://repo1.maven.org/maven2/org/apache/camel/camel-json-validator/${camel.version}/camel-json-validator-${camel.version}.jar" REQUIRED="true"/>
 		</IMPORTS>
 	</CODEGENERATION>
 

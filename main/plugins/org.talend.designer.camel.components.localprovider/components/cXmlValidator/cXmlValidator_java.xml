@@ -40,7 +40,7 @@
 	<CODEGENERATION>
 		<IMPORTS>
 			<IMPORT MODULE_GROUP="jackson-providers" REQUIRED="true" />
-			<IMPORT MODULE="camel-validator-3.11.1.jar" MVN="mvn:org.apache.camel/camel-validator/3.11.1" NAME="camel-validator-3.11.1.jar" UrlPath="https://repo1.maven.org/maven2/org/apache/camel/camel-validator/3.11.1/camel-validator-3.11.1.jar" REQUIRED="true"/>
+			<IMPORT MODULE="camel-validator-${camel.version}.jar" MVN="mvn:org.apache.camel/camel-validator/${camel.version}" NAME="camel-validator-${camel.version}.jar" UrlPath="https://repo1.maven.org/maven2/org/apache/camel/camel-validator/${camel.version}/camel-validator-${camel.version}.jar" REQUIRED="true"/>
 		</IMPORTS>
 	</CODEGENERATION>
 
