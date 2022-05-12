@@ -29,8 +29,10 @@
 		<geronimo-j2ee-management.version>1.0.1</geronimo-j2ee-management.version>
 		<!-- camel-mqtt -->
 		<mqtt-client.version>1.15</mqtt-client.version>
-		<hawtbuf.version>1.11</hawtbuf.version>
-		<hawtdispatch.version>1.21</hawtdispatch.version>
+		<!-- camel-leveldb -->
+		<leveldb-version>0.12</leveldb-version>
+		<leveldb-api-version>0.12</leveldb-api-version>
+		<leveldb-jni-version>1.8</leveldb-jni-version>
 		<!-- camel-ftp -->
 		<jsch.version>0.1.55</jsch.version>
 		<commons-net.version>3.8.0</commons-net.version>
@@ -56,6 +58,7 @@
 		<asm-version>5.0.3</asm-version>
 		<reflections.version>0.9.11</reflections.version>
 		<guava.version>30.0-jre</guava.version>
+		<guava.failureaccess.version>1.0.1</guava.failureaccess.version>
 		<validation-api.version>2.0.1.Final</validation-api.version>
 		<snakeyaml.version>1.30</snakeyaml.version>
 		<slf4j-api.version>1.7.32</slf4j-api.version>
@@ -822,6 +825,34 @@
 			<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
 			<version>1.2.5</version>
 		</dependency>
+		
+		<!--LEVELDB -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-leveldb</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.iq80.leveldb</groupId>
+			<artifactId>leveldb</artifactId>
+			<version>${leveldb-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.iq80.leveldb</groupId>
+			<artifactId>leveldb-api</artifactId>
+			<version>${leveldb-api-version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.fusesource.leveldbjni</groupId>
+			<artifactId>leveldbjni</artifactId>
+			<version>${leveldb-jni-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>failureaccess</artifactId>
+			<version>${guava.failureaccess.version}</version>
+		</dependency>		
+
 	</dependencies>
 
 	<build>
