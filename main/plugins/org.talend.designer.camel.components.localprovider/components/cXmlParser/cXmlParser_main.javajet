@@ -20,7 +20,7 @@ imports="
 	String unmarshalType = ElementParameterParser.getValue(node, "__UNMARSHAL_TYPE__");
 
   if ("custom".equals(xmlLib)) {
-    String id = ElementParameterParser.getValue(node, "__REF_ID__");
+    String id = ElementParameterParser.getValue(node, "__CUSTOM_REFERENCE__");
 %>
   .unmarshal().custom(<%=id%>)
 <%    
