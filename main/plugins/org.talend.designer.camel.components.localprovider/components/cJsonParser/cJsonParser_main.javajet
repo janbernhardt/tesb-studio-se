@@ -1,0 +1,31 @@
+<%@ jet 
+imports="
+    org.talend.core.model.process.INode 
+    org.talend.core.model.process.ElementParameterParser 
+    org.talend.core.model.process.IConnection
+    org.talend.core.model.process.IElementParameter
+    org.talend.designer.codegen.config.CodeGeneratorArgument
+    org.talend.designer.codegen.config.CamelEndpointBuilder
+    org.talend.core.model.components.IComponent
+    java.util.List
+    java.util.Map
+" 
+%>
+<%
+	CodeGeneratorArgument codeGenArgument = (CodeGeneratorArgument) argument;
+	INode node = (INode)codeGenArgument.getArgument();
+  String cid = node.getUniqueName();
+
+	String jsonLib = ElementParameterParser.getValue(node, "__JSON_LIBRARY__");
+	String unmarshalType = ElementParameterParser.getValue(node, "__UNMARSHAL_TYPE__");
+
+  if (unmarshalType == null || unmarshalType.isEmpty()) {
+%>
+	.unmarshal().json(<%=jsonLib%>)
+<%
+  } else {
+%>
+  .unmarshal().json(<%=jsonLib%>, <%=unmarshalType%>)
+<%
+  }
+%>

@@ -1,0 +1,58 @@
+<COMPONENT>
+
+	<HEADER PLATEFORM="ALL" SERIAL="" VERSION="0.1" STATUS="ALPHA" COMPATIBILITY="ALL" AUTHOR="Talend" RELEASE_DATE="20220510A" STARTABLE="false">
+		<SIGNATURE />
+	</HEADER>
+
+	<FAMILIES>
+		<FAMILY>Transformation</FAMILY>
+	</FAMILIES>
+
+	<DOCUMENTATION>
+		<URL>https://camel.apache.org/components/3.14.x/dataformats/json-jackson-dataformat.html</URL>
+	</DOCUMENTATION>
+
+	<CONNECTORS>
+		<CONNECTOR CTYPE="ROUTE" MIN_INPUT="1" MAX_INPUT="1" MAX_OUTPUT="1" MIN_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_WHEN" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_OTHER" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_TRY" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_CATCH" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_FINALLY" MAX_INPUT="1" MAX_OUTPUT="0" />
+		<CONNECTOR CTYPE="ROUTE_ENDBLOCK" MAX_INPUT="1" MAX_OUTPUT="0" />
+	</CONNECTORS>
+
+	<PARAMETERS>
+		<PARAMETER NAME="JSON_LIBRARY" FIELD="OPENED_LIST" NUM_ROW="1" REQUIRED="true" READONLY="false">
+			<ITEMS DEFAULT="GSON">
+				<ITEM NAME="GSON" VALUE="org.apache.camel.model.dataformat.JsonLibrary.Gson" />
+				<ITEM NAME="JACKSON" VALUE="org.apache.camel.model.dataformat.JsonLibrary.Jackson" />
+				<ITEM NAME="FASTJSON" VALUE="org.apache.camel.model.dataformat.JsonLibrary.Fastjson" />
+			</ITEMS>
+		</PARAMETER>
+		<PARAMETER NAME="UNMARSHAL_TYPE" FIELD="TEXT" NUM_ROW="2">
+			<DEFAULT>java.util.Map.class</DEFAULT>
+		</PARAMETER>
+	</PARAMETERS>
+
+	<ADVANCED_PARAMETERS>
+		<!-- Not implemented -->
+		<PARAMETER NAME="LIBRARY_OPTIONS" FIELD="TABLE" NUM_ROW="1" NB_LINES="5" SHOW="false">
+			<ITEMS>
+				<ITEM NAME="NAME" FIELD="TEXT">
+				</ITEM>
+				<ITEM NAME="VALUE" />
+			</ITEMS>
+		</PARAMETER>
+	</ADVANCED_PARAMETERS>
+
+	<CODEGENERATION>
+		<IMPORTS>
+			<IMPORT MODULE="camel-gson-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-gson-alldep-${camel.version}/6.0.0" NAME="talend-camel-gson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-gson-alldep-${camel.version}.jar" REQUIRED_IF="JSON_LIBRARY == 'org.apache.camel.model.dataformat.JsonLibrary.Gson'" />
+			<IMPORT MODULE="camel-jackson-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-jackson-alldep-${camel.version}/6.0.0" NAME="talend-camel-jackson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-jackson-alldep-${camel.version}.jar" REQUIRED_IF="JSON_LIBRARY == 'org.apache.camel.model.dataformat.JsonLibrary.Jackson'" />
+			<IMPORT MODULE="camel-fastjson-alldep-${camel.version}.jar" MVN="mvn:org.talend.libraries/camel-fastjson-alldep-${camel.version}/6.0.0" NAME="talend-camel-fastjson" UrlPath="platform:/plugin/org.talend.libraries.camel.alldeps/lib/camel-fastjson-alldep-${camel.version}.jar" REQUIRED_IF="JSON_LIBRARY == 'org.apache.camel.model.dataformat.JsonLibrary.Fastjson'" />
+		</IMPORTS>
+	</CODEGENERATION>
+
+	<RETURNS />
+</COMPONENT>
