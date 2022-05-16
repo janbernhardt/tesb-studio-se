@@ -2905,6 +2905,46 @@ if (isProvider) {
                 registry.put(<%=beanID%>, new <%=beanClass%>(<%=sb.toString()%>));
 <%
             }
+            for (INode node: process.getNodesOfType("cSQLConnection")) {
+                final String cid = node.getUniqueName();
+                NodeParamsHelper helper = new NodeParamsHelper(node);
+
+                String driverClassName = helper.getStringParam("__DRIVER_CLASS_NAME__");
+                String jdbcURL = helper.getStringParam("__JDBC_URL__");
+                boolean useDsAlias = helper.getBoolParam("__USE_DATA_SOURCE_ALIAS__");
+                boolean authRequired = helper.getBoolParam("__AUTH_REQUIRED__");
+                String dsAlias = helper.getStringParam("__DATA_SOURCE_ALIAS__");
+%>
+                if(camelContext.getRegistry().lookupByName("<%=cid%>") == null) {
+                    if (<%=useDsAlias%> && inOSGi) {
+                        javax.sql.DataSource ds_<%=cid%> = routines.system.BundleUtils.getService(javax.sql.DataSource.class, "(osgi.jndi.service.name=" + <%=dsAlias%> + ")");
+                        if (ds_<%=cid%> != null) {
+                            log.info("Using container managed datasource: " + <%=dsAlias%> + " : " + ds_<%=cid%>.toString());
+                            camelContext.getRegistry().bind("<%=cid%>", ds_<%=cid%>);
+                        } else {
+                            log.error("Datasource reference could not be found for: " + <%=dsAlias%>);
+                        }
+
+                    } else {
+                        org.apache.commons.dbcp2.BasicDataSource ds_<%=cid%> = new org.apache.commons.dbcp2.BasicDataSource();
+                        ds_<%=cid%>.setDriverClassName(<%=driverClassName%>);
+                        ds_<%=cid%>.setUrl(<%=jdbcURL%>);
+<%
+                        if (authRequired) {
+                            String username = helper.getStringParam("__SQL_USERNAME__");
+                            String passwordFieldName = "__SQL_PASSWORD__";
+%>
+                        <%@ include file="@{org.talend.designer.components.localprovider}/components/templates/password.javajet"%>
+                        ds_<%=cid%>.setUsername(<%=username%>);
+                        ds_<%=cid%>.setPassword(decryptedPassword_<%=cid%>);
+<%
+                        }
+%>
+                        camelContext.getRegistry().bind("<%=cid%>", ds_<%=cid%>);
+                    }
+                }
+<%
+            }
             //cMQConnectionFactory http://jira.talendforge.org/browse/TESB-4860
             for (INode node: process.getNodesOfType("cMQConnectionFactory")) {
                 NodeParamsHelper helper = new NodeParamsHelper(node);
