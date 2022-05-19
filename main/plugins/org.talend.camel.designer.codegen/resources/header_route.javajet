@@ -2939,6 +2939,48 @@ if (isProvider) {
                         ds_<%=cid%>.setPassword(decryptedPassword_<%=cid%>);
 <%
                         }
+                        String initSize = helper.getStringParam("__INITIAL_SIZE__");
+                        String maxCon = helper.getStringParam("__MAX_TOTAL__");
+                        String minIdle = helper.getStringParam("__MIN_IDLE__");
+                        String maxIdle = helper.getStringParam("__MAX_IDLE__");
+                        boolean setTimeouts = helper.getBoolParam("__SET_TIMEOUTS__");
+                        boolean useValidationQuery = helper.getBoolParam("__USE_VALIDATION_QUERY__");
+                        boolean useInitSQL = helper.getBoolParam("__USE_INIT_SQL__");
+%>
+                        ds_<%=cid%>.setInitialSize(<%=initSize%>);
+                        ds_<%=cid%>.setMaxTotal(<%=maxCon%>);
+                        ds_<%=cid%>.setMinIdle(<%=minIdle%>);
+                        ds_<%=cid%>.setMaxIdle(<%=maxIdle%>);
+<%
+                        if (setTimeouts) {
+                            String queryTimeout = helper.getStringParam("__QUERY_TIMEOUT__");
+                            String conTimeout = helper.getStringParam("__MAX_CONNECTION_DURATION__");
+                            String vaildationTimeout = helper.getStringParam("__VALIDATION_QUERY_TIMEOUT__");
+%>
+                        ds_<%=cid%>.setMaxConn(<%=conTimeout%>);
+                        ds_<%=cid%>.setDefaultQueryTimeout(<%=queryTimeout%>);
+<%
+                            if (useValidationQuery) {
+                                String validationQueryTimeout = helper.getStringParam("__VALIDATION_QUERY_TIMEOUT__");
+%>
+                        ds_<%=cid%>.setValidationQueryTimeout(java.time.Duration.ofSeconds(<%=validationQueryTimeout%>));
+<%
+                            }
+                        }
+                        if (useValidationQuery) {
+                            String validationQuery = helper.getStringParam("__VALIDATION_QUERY__");
+%>
+                        ds_<%=cid%>.setValidationQuery(<%=validationQuery%>);
+<%
+                        }
+                        if (useInitSQL) {
+                            String initSQL = helper.getStringParam("__INIT_QUERY__");
+                            initSQL = org.talend.core.model.utils.NodeUtil.replaceCRLFInMEMO_SQL(initSQL);
+		                    initSQL = initSQL.replace("\\n", "");
+%>
+                        ds_<%=cid%>.setConnectionInitSqls(java.util.Arrays.asList(<%=initSQL%>));
+<%
+                        }
 %>
                         camelContext.getRegistry().bind("<%=cid%>", ds_<%=cid%>);
                     }
