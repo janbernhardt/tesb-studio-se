@@ -10,6 +10,7 @@
 		org.talend.designer.codegen.config.CodeGeneratorArgument
 		org.talend.designer.codegen.config.NodeConnectionsHelper
 		org.talend.designer.codegen.config.NodeParamsHelper
+		org.talend.core.model.process.IContextParameter
 	"
 %>
 <%
@@ -24,6 +25,8 @@ if (inputConn == null) {
 IConnection connResponse = connsHelper.getOutputConnResponse();
 IConnection connFault = connsHelper.getOutputConnFault();
 List<IConnection> dataOutputs = connsHelper.getDataOutputs();
+
+List<IContextParameter> params = node.getProcess().getContextManager().getDefaultContext().getContextParameterList();
 
 String projectName = codeGenArgument.getCurrentProjectName();
 String cid = node.getUniqueName();
@@ -51,6 +54,12 @@ String useProxy = ElementParameterParser.getValue(node, "__USE_PROXY__");
 if (!node.getElementParameter("USE_PROXY").isContextMode()) {
     // non-dynamic (bug with non updating parameter value after removing field from dynamic)
     useProxy = "true".equals(useProxy) ? "true" : "false";
+} else {
+    for (IContextParameter ctxParam: params) {
+        if(ctxParam.getName().equals(useProxy.replace("context.", ""))){ // useProxy code value is with prefix "context."
+            useProxy = "true".equals(ctxParam.getValue()) ? "true" : "false";
+        }
+    }
 }
 
 // use paramsHelper.getVisibleBoolParam to return false if the controller of this parameter is not visible.
@@ -68,6 +77,12 @@ String useAuth = ElementParameterParser.getValue(node, "__NEED_AUTH__");
 if (!node.getElementParameter("NEED_AUTH").isContextMode()) {
     // non-dynamic (bug with non updating parameter value after removing field from dynamic)
     useAuth = "true".equals(useAuth) ? "true" : "false";
+} else {
+    for (IContextParameter ctxParam: params) {
+        if(ctxParam.getName().equals(useAuth.replace("context.", ""))){
+            useAuth = "true".equals(ctxParam.getValue()) ? "true" : "false";
+        }
+    }
 }
 
 String authType = paramsHelper.getStringParam("__AUTH_TYPE__");

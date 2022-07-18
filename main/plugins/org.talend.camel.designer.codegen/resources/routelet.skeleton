@@ -77,7 +77,7 @@ public class CLASS {
 	            	}
 	            	code.append(instanceName+".setContextName(contextStr);\n");
 	            }else if(useSelected){
-	            	//do nothing
+	            	code.append(instanceName+".setContextName(\"" + ElementParameterParser.getValue(node, "__PROCESS_TYPE_CONTEXT__") + "\");\n");
 	            }else if(useRoutelet){
 	            	code.append(instanceName+".setContextName(\""+node.getComponent().getProcess().getContextManager().getDefaultContext().getName()+"\");\n");
 	            }	            
@@ -118,7 +118,7 @@ public class CLASS {
 	            if(useRoute){
 	            	code.append(instanceName+".setContextName(contextStr);\n");	            	
 	            }else if(useSelected){
-	            	//do nothing
+	            	code.append(instanceName+".setContextName(\"" + ElementParameterParser.getValue(node, "__PROCESS_TYPE_CONTEXT__") + "\");\n");
 	            }else if(useRoutelet) {
 	            	code.append(instanceName+".setContextName(\""+node.getComponent().getProcess().getContextManager().getDefaultContext().getName()+"\");\n");
 	            }

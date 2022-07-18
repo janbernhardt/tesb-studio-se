@@ -19,12 +19,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.talend.commons.exception.PersistenceException;
 import org.talend.core.model.general.Project;
 import org.talend.core.model.process.EConnectionType;
 import org.talend.core.model.process.IProcess;
+import org.talend.core.model.process.JobInfo;
 import org.talend.core.model.properties.Item;
 import org.talend.core.model.properties.ProcessItem;
 import org.talend.core.model.properties.Property;
@@ -43,6 +44,7 @@ import org.talend.designer.core.model.utils.emf.talendfile.ProcessType;
 import org.talend.designer.maven.utils.PomIdsHelper;
 import org.talend.designer.publish.core.models.FeatureModel;
 import org.talend.designer.publish.core.models.FeaturesModel;
+import org.talend.designer.runprocess.ProcessorUtilities;
 import org.talend.repository.ProjectManager;
 import org.talend.repository.RepositoryPlugin;
 import org.talend.repository.model.IRepositoryNode;
@@ -288,6 +290,18 @@ public final class CamelFeatureUtil {
         }
     }
 
+    private static void addChildSpecificFeatures(Collection<FeatureModel> features, ProcessItem routeProcess, IDesignerCoreService designerService) {
+        Set<JobInfo> childrenJobInfo = ProcessorUtilities.getChildrenJobInfo(routeProcess);
+        for(JobInfo jobInfo: childrenJobInfo) {
+            //APPINT-34618 add pax-jdbc-mssql feature if mssql is used in child job.
+            if(designerService.getProcessFromProcessItem(jobInfo.getProcessItem(), false)
+                    .getNeededLibraries(TalendProcessOptionConstants.MODULES_DEFAULT).stream()
+                    .anyMatch(lib -> lib.matches("mssql-jdbc.jar"))) {
+                features.addAll( Arrays.asList(new FeatureModel[] { new FeatureModel("pax-jdbc-mssql") }));
+                break;
+            }
+        }
+    }
 	/**
 	 * Add feature and bundle to Feature Model
 	 *
@@ -306,6 +320,7 @@ public final class CamelFeatureUtil {
             }
         }
 
+        addChildSpecificFeatures(features, routeProcess, designerService);
         addNodesSpecialFeatures(features, routeProcess.getProcess());
         addConnectionsSpecialFeatures(features, routeProcess.getProcess());
 

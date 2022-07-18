@@ -171,8 +171,10 @@ public class CamelDesignerCoreService implements ICamelDesignerCoreService {
     private void addSpringContent(Item item, Element jobElement) {
         Element routeSpringElement = jobElement.addElement("RouteSpring");
         routeSpringElement.addAttribute(QName.get("space", Namespace.XML_NAMESPACE), "preserve");
-        String springContent = ((CamelProcessItem) item).getSpringContent();
-        routeSpringElement.addText(springContent);
+        if (item instanceof CamelProcessItem) {
+            String springContent = ((CamelProcessItem) item).getSpringContent();
+            routeSpringElement.addText(springContent);
+        }
     }
 
     @Override

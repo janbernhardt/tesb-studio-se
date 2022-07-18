@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: ESB Library Plug-in
+Bundle-Name: ESB Libraries Plug-in
 Bundle-Version: 8.8.8.qualifier
 Bundle-Vendor: .Talend SA.
 Bundle-SymbolicName: org.talend.libraries.esb;singleton:=true

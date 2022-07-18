@@ -13,6 +13,7 @@
 
   <properties>
       <slf4j-api.version>1.7.32</slf4j-api.version>
+      <woodstox-core.version>6.2.6</woodstox-core.version>
   </properties>
 
 	<dependencies>

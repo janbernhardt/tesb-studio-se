@@ -9,6 +9,7 @@
 		org.talend.core.model.metadata.IMetadataColumn
 		org.talend.core.model.metadata.types.JavaTypesManager
 		org.talend.core.model.metadata.types.JavaType
+		org.talend.core.model.process.ProcessUtils
 
 		java.util.List
 		java.util.Map
@@ -22,7 +23,7 @@
 	cid = cid.replaceAll("_In", "");
 	
 String nodeLabel = node.getLabel();
-if(nodeLabel == null){
+if(nodeLabel == null || nodeLabel.contains(cid)){
 	nodeLabel = cid;
 	
 }
@@ -101,7 +102,7 @@ if ((metadatas!=null)&&(metadatas.size()>0)) {
 		            		headersNotNullSb.append(".class);\n");
 		            	}
 		            	headersIsNullSb.append("System.err.println(\"ERROR: No input for ");
-		            	headersIsNullSb.append(nodeLabel);
+		            	headersIsNullSb.append(ProcessUtils.escapeJava(nodeLabel));
 		            	headersIsNullSb.append(", You may need to start it Via a Route instead of running it directly!\");");
 		            	headersIsNullSb.append(conn.getName());
 		            	headersIsNullSb.append(" = null");

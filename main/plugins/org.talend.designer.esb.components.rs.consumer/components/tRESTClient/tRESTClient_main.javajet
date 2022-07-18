@@ -11,12 +11,13 @@
 		org.talend.designer.codegen.config.NodeConnectionsHelper
 		org.talend.designer.codegen.config.NodeParamsHelper
 		org.talend.core.model.process.IProcess
+		org.talend.core.model.process.IContextParameter
 	"
 %>
 <%
 CodeGeneratorArgument codeGenArgument = (CodeGeneratorArgument) argument;
 INode node = (INode) codeGenArgument.getArgument();
-
+List<IContextParameter> params = node.getProcess().getContextManager().getDefaultContext().getContextParameterList();
 final String MULTIPART_MIXED = "multipart/mixed";
 
 /*INIT PARAMETERS AND INDICATORS.*/
@@ -45,6 +46,12 @@ String useAuth = ElementParameterParser.getValue(node, "__NEED_AUTH__");
 if (!node.getElementParameter("NEED_AUTH").isContextMode()) {
 	// non-dynamic (bug with non updating parameter value after removing field from dynamic)
 	useAuth = "true".equals(useAuth) ? "true" : "false";
+} else {
+    for (IContextParameter ctxParam: params) {
+        if(ctxParam.getName().equals(useAuth.replace("context.", ""))){
+            useAuth = "true".equals(ctxParam.getValue()) ? "true" : "false";
+        }
+    }
 }
 String authType = paramsHelper.getStringParam("__AUTH_TYPE__");
 if (!node.getElementParameter("AUTH_TYPE").isContextMode()) {
@@ -55,6 +62,12 @@ String useProxy = ElementParameterParser.getValue(node, "__USE_PROXY__");
 if (!node.getElementParameter("USE_PROXY").isContextMode()) {
 	// non-dynamic (bug with non updating parameter value after removing field from dynamic)
 	useProxy = "true".equals(useProxy) ? "true" : "false";
+} else {
+    for (IContextParameter ctxParam: params) {
+        if(ctxParam.getName().equals(useProxy.replace("context.", ""))){ // useProxy code value is with prefix "context."
+            useProxy = "true".equals(ctxParam.getValue()) ? "true" : "false";
+        }
+    }
 }
 
 boolean isSLEnable = paramsHelper.getBoolParam("__SERVICE_LOCATOR__");
@@ -352,18 +365,15 @@ try {
 	if (!inOSGi) {
 		conduit_<%=cid%>.getClient().setReceiveTimeout((long)(<%=paramsHelper.getStringParam("__RECEIVE_TIMEOUT__")%> * 1000L));
 		conduit_<%=cid%>.getClient().setConnectionTimeout((long)(<%=paramsHelper.getStringParam("__CONNECTION_TIMEOUT__")%> * 1000L));
-		boolean use_proxy_<%=cid%> = <%=useProxy%>;
-		<% if("true".equals(useProxy)){%>
-			if (use_proxy_<%=cid %>) {
-				<% passwordFieldName = "__PROXY_PASSWORD__"; %>
-				<%@ include file="@{org.talend.designer.components.localprovider}/components/templates/password.javajet"%>
+            <% if("true".equals(useProxy)){%>   
+			<% passwordFieldName = "__PROXY_PASSWORD__"; %>
+			<%@ include file="@{org.talend.designer.components.localprovider}/components/templates/password.javajet"%>
 
-				conduit_<%=cid%>.getClient().setProxyServer(<%=paramsHelper.getStringParam("__PROXY_HOST__")%>);
-				conduit_<%=cid%>.getClient().setProxyServerPort(Integer.valueOf(<%=paramsHelper.getStringParam("__PROXY_PORT__")%>));
-				conduit_<%=cid%>.getProxyAuthorization().setUserName(<%=paramsHelper.getStringParam("__PROXY_USERNAME__")%>);
-				conduit_<%=cid%>.getProxyAuthorization().setPassword(decryptedPassword_<%=cid%>);
-			}
-		<%}%>
+			conduit_<%=cid%>.getClient().setProxyServer(<%=paramsHelper.getStringParam("__PROXY_HOST__")%>);
+			conduit_<%=cid%>.getClient().setProxyServerPort(Integer.valueOf(<%=paramsHelper.getStringParam("__PROXY_PORT__")%>));
+			conduit_<%=cid%>.getProxyAuthorization().setUserName(<%=paramsHelper.getStringParam("__PROXY_USERNAME__")%>);
+			conduit_<%=cid%>.getProxyAuthorization().setPassword(decryptedPassword_<%=cid%>);
+            <% }%>
 	}
 	<%
 	/*tSetKeystore-TESB-22406*/

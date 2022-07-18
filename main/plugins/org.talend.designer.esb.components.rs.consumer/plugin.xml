@@ -16,9 +16,10 @@
 		    uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-cxf-core}"
 		    bundleID="" />
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
-		    name="${tesb-woodstox-core-asl}"
-		    id="woodstox-core-asl"
-		    uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-woodstox-core-asl}"
+		    name="${tesb-woodstox-core}"
+		    id="woodstox-core"
+	            mvn_uri="mvn:com.fasterxml.woodstox/woodstox-core/${woodstox-core.version}"
+		    uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-woodstox-core}"
 		    bundleID="" />
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
 		    name="${tesb-stax2-api}"
@@ -36,7 +37,7 @@
 			id="cxf-core"
 			name="cxf-core">
 		    <library id="cxf-core" />
-		    <library id="woodstox-core-asl" />
+		    <library id="woodstox-core" />
 		    <library id="stax2-api" />
 		    <library id="xmlschema-core" />
 		    <library id="jakarta.xml.bind-api" />
@@ -274,7 +275,6 @@
 		    id="httpasyncclient"
 		    uripath="platform:/plugin/org.talend.libraries.esb/lib/${tesb-httpasyncclient}"
 		    bundleID="" />
-
 		<libraryNeededGroup
 			description="cxf-rt-transports-http-hc"
 			id="cxf-rt-transports-http-hc"
@@ -773,10 +773,10 @@
 			       uripath="platform:/plugin/org.talend.libraries.esb/lib/txw2-2.3.3.jar"
 					   bundleID="" />
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
-			       name="jakarta.jws-api-1.1.1.jar"
+			       name="jakarta.jws-api-2.1.0.jar"
 			       id="jakarta.jws-api"
-			       mvn_uri="mvn:jakarta.jws/jakarta.jws-api/1.1.1"
-			       uripath="platform:/plugin/org.talend.libraries.esb/lib/jakarta.jws-api-1.1.1.jar"
+			       mvn_uri="mvn:jakarta.jws/jakarta.jws-api/2.1.0"
+			       uripath="platform:/plugin/org.talend.libraries.esb/lib/jakarta.jws-api-2.1.0.jar"
 			       bundleID="" />
 		<libraryNeeded context="plugin:org.talend.libraries.esb"
 			       name="org.apache.servicemix.specs.jaxws-api-2.2-2.9.0.jar"

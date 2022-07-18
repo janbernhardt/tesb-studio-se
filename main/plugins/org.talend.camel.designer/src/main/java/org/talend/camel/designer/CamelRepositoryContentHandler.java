@@ -12,6 +12,7 @@
 // ============================================================================
 package org.talend.camel.designer;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.eclipse.core.resources.IProject;
@@ -145,6 +146,13 @@ public class CamelRepositoryContentHandler extends AbstractResourceRepositoryCon
             return saveScreenShots((ProcessItem) item);
         }
         return null;
+    }
+    
+    @Override
+    public void copyScreenShotFile(Item originalItem, Item newItem) throws IOException {
+        if (newItem.eClass() == CamelPropertiesPackage.Literals.CAMEL_PROCESS_ITEM) {
+        	copyScreenshotFile(originalItem, newItem);
+        }
     }
 
     @Override
